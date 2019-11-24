@@ -1,0 +1,59 @@
+<!--Header-->
+<header class="header-class">
+    <nav class="navbar navbar-dark navbar-expand-lg"> 
+        <div class="container text-center">
+            <h1>Burger Time 2: The Revenge!</h1>
+        </div>
+    </nav>
+</header>
+
+<!--Main content body-->
+<div id="page-body" class="container">
+
+    <div class="row no-gutters">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 m-4">
+            <img class="burger-image" src="/assets/img/burger.png" alt="A Tasty Burger">
+        </div>
+
+        <div class="col-md-4 m-4 parent-div">
+            <form>
+                <label for="burger-input" class="label">Enter a burger you would like to eat</label>
+                <div class="input-group">
+                    <input class="form-control" id="burger-input" type="text" placeholder="Enter Burger Name">
+                    <button class="btn btn-secondary ml-2 input-group-btn" id="burger-submit" type="submit">Add Burger</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Burgers to Devour</h5>
+            <ul>
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        {{> burger-not-devoured}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Burgers Devoured</h5>
+            <ul>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        {{> burger-devoured}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer id="sticky-footer" class="pt-4 pb-1">
+    <div class="container text-center">
+        <small>&copy;Nick Mikstas - nmikstas@alumni.scu.edu</small>
+    </div>
+</footer>
