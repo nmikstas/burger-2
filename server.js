@@ -37,7 +37,7 @@ require("./routes/api-routes.js")(app);
 //Sync sequelize models then start Express.
 db.sequelize.sync(
 {
-    force: true
+    //force: true
 })
 .then(function()
 {
