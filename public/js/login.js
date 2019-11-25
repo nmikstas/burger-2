@@ -18,6 +18,14 @@ $(document).ready(function()
 
         if (!userData.username || !userData.password)
         {
+            $(".info-message").empty();
+            $(".info-message").append
+            (
+                "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">" +
+                "<strong>Blank Fields!</strong> Please fill out all the fields." +
+                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
+                "<span aria-hidden=\"true\">&times;</span></button></div>"
+            );
             return;
         }
 
