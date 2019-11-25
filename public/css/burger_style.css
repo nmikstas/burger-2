@@ -117,7 +117,7 @@ footer
 }
 
 /******************************************* Page Body *******************************************/
-#page-body
+#page-body, #login-body, #signup-body
 {
     flex: 1 0 auto;
     text-align: center;
@@ -150,5 +150,54 @@ footer
 {
     text-align: left;
     padding: 10px;
+}
+
+/**************************************** Signup and Login ***************************************/
+.sign-up, .log-in
+{
+    text-align: left;
+    margin: 2rem auto;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid rgba(30, 47, 126, 1);
+}
+
+.info-message
+{
+    height: 50px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.member-div
+{
+    display: inline-block;
+   
+}
+
+.float-right-div
+{
+    float: right;
+}
+
+/******************************************** Navbar *********************************************/
+.navbar-header
+{
+    width: 100%;
+}
+
+.navbar-user
+{
+  display: inline;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.navbar-logout
+{
+    float: right;
+    color: #111111;
 }
 

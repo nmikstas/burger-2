@@ -1,39 +1,40 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
+//Dependencies
+let express      = require("express");
+let session      = require('express-session');
+let morgan       = require('morgan');
+let passport     = require('./config/passport');
 
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 8880;
+//Setting up port and requiring models for syncing
+let PORT = process.env.PORT || 8880;
+let db = require("./models");
 
-// Requiring our models for syncing
-var db = require("./models");
-
-// Sets up the Express app to handle data parsing
+//Creating express app and configuring needed middleware.
+let app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
+app.use(morgan('dev'));
 
-// Set Handlebars.
+//Set Handlebars.
 let exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Static directory
-app.use(express.static("public"));
+// We need to use sessions to keep track of our user's login status
+app.use(session(
+{
+    secret: "burger2supersecret",
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// Routes
-// =============================================================
+// Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/burger-api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
+//Sync sequelize models then start Express.
 db.sequelize.sync(
 {
     //force: true
@@ -45,3 +46,4 @@ db.sequelize.sync(
         console.log("App listening on PORT " + PORT);
     });
 });
+  

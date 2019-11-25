@@ -7,13 +7,24 @@
     </nav>
 </header>
 
+<nav class="navbar navbar-default bg-secondary">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-user">Hello, {{user}}! </div>
+            <a class="navbar-logout" href="/logout">
+                Logout
+            </a>
+        </div>
+    </div>
+</nav>
+
 <!--Main content body-->
 <div id="page-body" class="container">
 
     <div class="row no-gutters">
         <div class="col-md-2"></div>
         <div class="col-md-4 m-4">
-            <img class="burger-image" src="/assets/img/burger.png" alt="A Tasty Burger">
+            <img class="burger-image" src="/img/burger.png" alt="A Tasty Burger">
         </div>
 
         <div class="col-md-4 m-4 parent-div">
@@ -57,3 +68,9 @@
         <small>&copy;Nick Mikstas - nmikstas@alumni.scu.edu</small>
     </div>
 </footer>
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+
+<!--Page Javascript-->
+<script src="/js/burger_html.js"></script>
