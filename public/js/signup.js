@@ -15,7 +15,7 @@ $(document).ready(function()
         var userData =
         {
             username: usernameInput.val().trim(),
-            email: emailInput.val().trim(),
+            email:    emailInput.val().trim(),
             password: passwordInput.val().trim()
         };
 
@@ -77,7 +77,7 @@ $(document).ready(function()
         $.post("/api/signup",
         {
             username: username,
-            email: email,
+            email:    email,
             password: password
         })
         .then(function(data)
