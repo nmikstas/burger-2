@@ -1,8 +1,40 @@
 <!--Header-->
 <header class="header-class">
-    <nav class="navbar navbar-dark navbar-expand-lg"> 
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <a class="navbar-brand nav-title px-2" href="https://nmikstas.github.io/portfolio/index.html">Nick Mikstas Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="container text-center">
-            <h1>Burger Time 2: The Revenge!</h1>
+            <h1>Burger 2: The Revenge!</h1>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/resume.html">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/web.html">Web</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/embedded.html">Embedded</a>
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/fpga.html">FPGA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/dsp.html">DSP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nmikstas.github.io/portfolio/games.html">Games</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>
@@ -10,24 +42,38 @@
 <!--Main content body-->
 <div id="login-body" class="container">
     
-    <div class="log-in">
-        <h2>Log In</h2>
+    <div class="row">
+        <div class="info-div col-md-6">
+            <h2>About Burger Time 2</h2>
+            <p>
+                Burger Time 2 is a simple web page that demonstrates the use of a MySQL database to save user
+                information on a server.  It has a login that uses passport and bcrypt for salting and hashing
+                passwords. Once logged in, a user can make a list of burgers they want to eat. The user can 
+                then move the burgers to a devoured column after they have eaten them.
+                <br><br>
+                The user "test" with the password "test" can be used to explore the software without signing up.
+            </p>
+        </div>
 
-        <div class="info-message"></div>
+        <div class="log-in col-md-6">
+            <h2>Log In</h2>
 
-        <form class="login">
-            <label>User Name:</label><br>
-            <input type="text" id="username-input" name="username" class="form-control"><br>
+            <div class="info-message"></div>
 
-            <label>Password:</label><br>
-            <input type="password" id="password-input" name="password" class="form-control"><br>
+            <form class="login">
+                <label>User Name:</label><br>
+                <input type="text" id="username-input" name="username" class="form-control"><br>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <label>Password:</label><br>
+                <input type="password" id="password-input" name="password" class="form-control"><br>
 
-            <div class="float-right-div">
-                <div class="member-div">Not a member?</div> <a href="/signup">Sign up here</a>
-            </div>
-        </form>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <div class="float-right-div">
+                    <div class="member-div">Not a member?</div> <a href="/signup">Sign up here</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
